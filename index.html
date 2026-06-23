@@ -1,225 +1,330 @@
 <!DOCTYPE html>
-<!--
-  ============================================================
-  학술용 CV / 포트폴리오 사이트
-  - 이 파일(index.html)이 사이트의 본문입니다.
-  - "여기를 수정하세요" 라고 적힌 부분의 글자만 바꾸면 됩니다.
-  - 모양(색, 글꼴)은 css/style.css 에서 바꿉니다.
-  ============================================================
--->
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ▼▼▼ 여기를 수정하세요: 브라우저 탭에 뜨는 제목 ▼▼▼ -->
-  <title>최재엽 | Academic CV</title>
-  <!-- 검색엔진/SNS 공유용 설명 -->
-  <meta name="description" content="최재엽 (Jaeyeop Choi) — 경북대학교. 연구 관심사와 학업 기록을 담은 학술용 포트폴리오." />
-
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- 아이콘 폰트 (이메일/깃허브 아이콘 등) -->
+  <title>최재엽 | 포트폴리오</title>
+  <meta name="description" content="최재엽의 개인 포트폴리오 웹사이트" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- ============ 상단 내비게이션 ============ -->
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#top" class="nav__brand">최재엽</a>
-      <ul class="nav__links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="다크 모드 전환">🌙</button>
-    </nav>
+  <!-- 네비게이션 -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo">JY.</a>
+      <nav>
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#home">홈</a></li>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#skills">기술</a></li>
+          <li><a href="#timeline">타임라인</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+        <button class="nav__hamburger" id="hamburger" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main id="top">
-
-    <!-- ============ HERO: 첫 인상 (이름/한 줄 소개) ============ -->
-    <section class="hero">
-      <div class="hero__inner">
-        <!-- ▼ 프로필 사진: assets/profile.jpg 파일을 넣으면 표시됩니다 ▼ -->
-        <img src="assets/profile.jpg" alt="최재엽 프로필 사진" class="hero__photo"
-             onerror="this.style.display='none'" />
-        <div class="hero__text">
-          <!-- ▼▼▼ 여기를 수정하세요: 이름 / 한 줄 소개 ▼▼▼ -->
-          <h1 class="hero__name">최재엽 <span class="hero__name-en">Jaeyeop Choi</span></h1>
-          <p class="hero__tagline">
-            경북대학교 ○○학과 학부생 · 대학원 진학 준비 중<br />
-            관심 분야: ○○○, ○○○
+  <main>
+    <!-- 히어로 -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__greeting">안녕하세요, 반갑습니다 👋</p>
+          <h1 class="hero__title">저는 <span class="accent">최재엽</span>입니다</h1>
+          <p class="hero__subtitle">꾸준히 성장하는 개척자 🧠</p>
+          <p class="hero__desc">
+            중앙대학교 심리학과에 재학 중이며, neuroscience와 brain mapping에
+            깊은 관심을 가지고 있습니다. 마음과 뇌의 작동 원리를 탐구하며
+            한 걸음씩 나아가고 있습니다.
           </p>
-          <!-- ▼ 링크들: 주소(href="...")를 본인 것으로 바꾸세요. 없으면 줄 전체를 지우세요 ▼ -->
-          <div class="hero__links">
-            <a href="mailto:chlwlsduq@knu.ac.kr">✉ Email</a>
-            <a href="https://github.com/사용자이름" target="_blank" rel="noopener">⌨ GitHub</a>
-            <a href="https://scholar.google.com/" target="_blank" rel="noopener">🎓 Scholar</a>
-            <a href="assets/cv.pdf" target="_blank" rel="noopener">📄 CV (PDF)</a>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+            <a href="#contact" class="btn btn--ghost">연락하기</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__image">
+            <span class="hero__image-ph">🖼️<br />이미지 자리</span>
+            <!-- images/hero.jpg 파일을 넣으면 자동으로 표시됩니다 -->
+            <img src="images/hero.jpg" alt="" onerror="this.remove()" />
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll">스크롤 ↓</div>
+    </section>
+
+    <!-- 소개 -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title">소개</h2>
+        <div class="about">
+          <div class="about__avatar">
+            <img src="images/profile.jpg" alt="최재엽 프로필 사진" onerror="this.remove()" />
+            <span>JY</span>
+          </div>
+          <div class="about__text">
+            <p>
+              안녕하세요! 저는 중앙대학교 심리학과 3학년에 재학 중인 최재엽입니다.
+              사람의 마음과 행동이 뇌에서 어떻게 비롯되는지 궁금해하며 공부하고 있습니다.
+            </p>
+            <p>
+              특히 neuroscience와 brain mapping 분야에 매료되어, 뇌의 구조와 기능을
+              이해하는 일에 관심을 두고 있습니다. '꾸준히 성장하는 개척자'라는 마음가짐으로
+              아직 가보지 않은 영역을 탐구해 나가고자 합니다.
+            </p>
+            <ul class="about__facts">
+              <li><strong>전공</strong> 중앙대학교 심리학과 3학년</li>
+              <li><strong>관심분야</strong> Neuroscience · Brain Mapping</li>
+              <li><strong>이메일</strong> myjai132@gmail.com</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="section">
-      <h2 class="section__title">About</h2>
-      <!-- ▼▼▼ 여기를 수정하세요: 자기소개 2~4문장 ▼▼▼ -->
-      <p class="prose">
-        안녕하세요. 경북대학교에서 ○○○을 전공하고 있는 최재엽입니다.
-        ○○○ 분야에 관심을 두고 ○○○ 연구를 해보고 싶습니다.
-        이 페이지에는 제 학업·연구·프로젝트 기록을 정리해 두었습니다.
-      </p>
-    </section>
-
-    <!-- ============ EDUCATION (학력) ============ -->
-    <section id="education" class="section">
-      <h2 class="section__title">Education</h2>
-      <ul class="timeline">
-        <!-- ▼ 항목 하나를 복사해서 늘리거나 줄이세요 ▼ -->
-        <li class="timeline__item">
-          <div class="timeline__date">2022 – 현재</div>
-          <div class="timeline__body">
-            <h3>경북대학교 (Kyungpook National University)</h3>
-            <p>○○학과 학사 과정 · GPA ○.○/4.5</p>
-            <p class="muted">주요 수강: 자료구조, 알고리즘, ○○○</p>
+    <!-- 기술 -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title">기술 스택</h2>
+        <p class="section__lead">제가 다루거나 배우고 있는 기술들입니다.</p>
+        <div class="skills">
+          <div class="skill-card">
+            <div class="skill-card__icon">📊</div>
+            <h3>SPSS</h3>
+            <p>통계 분석과 가설 검정</p>
           </div>
-        </li>
-        <li class="timeline__item">
-          <div class="timeline__date">~ 2022</div>
-          <div class="timeline__body">
-            <h3>○○고등학교</h3>
+          <div class="skill-card">
+            <div class="skill-card__icon">🐍</div>
+            <h3>Python</h3>
+            <p>실험 데이터 처리와 분석 자동화</p>
           </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ============ RESEARCH INTERESTS (연구 관심사) ============ -->
-    <section id="research" class="section">
-      <h2 class="section__title">Research Interests</h2>
-      <!-- ▼ 관심 분야를 태그처럼 나열 ▼ -->
-      <div class="tags">
-        <span class="tag">○○○</span>
-        <span class="tag">○○○</span>
-        <span class="tag">○○○</span>
-      </div>
-      <p class="prose">
-        (선택) 관심 분야에 대한 짧은 설명이나, 읽고 있는 논문/주제를 적어두면
-        대학원 지원 시 교수님께 보여드리기 좋습니다.
-      </p>
-    </section>
-
-    <!-- ============ PUBLICATIONS (논문/발표) ============ -->
-    <section id="publications" class="section">
-      <h2 class="section__title">Publications &amp; Presentations</h2>
-      <ol class="pub-list">
-        <!-- ▼ 논문이 생기면 항목을 추가하세요. 지금은 예시입니다 ▼ -->
-        <li>
-          <strong>저자1, 최재엽, 저자3.</strong>
-          "논문 제목이 들어갑니다."
-          <em>학회/저널 이름</em>, 2025.
-          <a href="#">[PDF]</a> <a href="#">[Code]</a>
-        </li>
-      </ol>
-      <p class="muted">아직 논문이 없다면 이 섹션은 비워두거나 삭제해도 됩니다.</p>
-    </section>
-
-    <!-- ============ PROJECTS (프로젝트) ============ -->
-    <section id="projects" class="section">
-      <h2 class="section__title">Projects</h2>
-      <div class="cards">
-        <!-- ▼ 카드 하나를 복사해서 프로젝트마다 추가하세요 ▼ -->
-        <article class="card">
-          <h3>프로젝트 이름</h3>
-          <p>한두 문장으로 무엇을 만들었고 무엇을 배웠는지 설명합니다.</p>
-          <div class="card__meta">
-            <span class="tag">Python</span>
-            <span class="tag">React</span>
+          <div class="skill-card">
+            <div class="skill-card__icon">👁️</div>
+            <h3>아이트래커</h3>
+            <p>시선 추적 실험과 시선 데이터 분석</p>
           </div>
-          <a href="https://github.com/사용자이름/저장소" target="_blank" rel="noopener">GitHub →</a>
-        </article>
-        <article class="card">
-          <h3>또 다른 프로젝트</h3>
-          <p>설명을 적습니다.</p>
-          <div class="card__meta">
-            <span class="tag">C</span>
-          </div>
-          <a href="#" target="_blank" rel="noopener">자세히 →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============ AWARDS & ACTIVITIES (수상/활동) ============ -->
-    <section id="awards" class="section">
-      <h2 class="section__title">Awards &amp; Activities</h2>
-      <ul class="timeline">
-        <li class="timeline__item">
-          <div class="timeline__date">2025</div>
-          <div class="timeline__body">
-            <h3>○○ 경진대회 ○○상</h3>
-            <p class="muted">주최: ○○○</p>
-          </div>
-        </li>
-        <li class="timeline__item">
-          <div class="timeline__date">2024</div>
-          <div class="timeline__body">
-            <h3>○○ 동아리 / 학회 활동</h3>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ============ SKILLS (기술) ============ -->
-    <section id="skills" class="section">
-      <h2 class="section__title">Skills</h2>
-      <div class="skills">
-        <div>
-          <h4>Programming</h4>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">C / C++</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-        <div>
-          <h4>Tools</h4>
-          <div class="tags">
-            <span class="tag">Git</span>
-            <span class="tag">Linux</span>
-            <span class="tag">LaTeX</span>
-          </div>
-        </div>
-        <div>
-          <h4>Languages</h4>
-          <div class="tags">
-            <span class="tag">한국어 (모국어)</span>
-            <span class="tag">English (TOEIC ○○○)</span>
+          <div class="skill-card">
+            <div class="skill-card__icon">📑</div>
+            <h3>Excel</h3>
+            <p>데이터 정리·집계와 기초 분석</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="section">
-      <h2 class="section__title">Contact</h2>
-      <p class="prose">
-        연구·협업·질문은 언제든 이메일로 연락 주세요.<br />
-        <a href="mailto:chlwlsduq@knu.ac.kr">chlwlsduq@knu.ac.kr</a>
-      </p>
+    <!-- 타임라인 -->
+    <section class="section" id="timeline">
+      <div class="container">
+        <h2 class="section__title">타임라인</h2>
+        <p class="section__lead">
+          대학 생활의 큰 줄기를 이루는 활동과 그 사이사이의 수상 이력을 하나의 흐름으로 담았습니다.
+          그 외의 활동은 오른쪽에 따로 정리했습니다.
+        </p>
+        <!-- timeline__item 블록을 복사·수정해 자유롭게 늘리거나 줄이세요. 수상 이력은 timeline__item--award 클래스를 붙입니다 -->
+        <div class="timeline-group">
+          <!-- 메인: 주요 활동 · 수상 -->
+          <div class="timeline-track">
+            <h3 class="timeline-track__title">🎯 주요 활동 · 수상</h3>
+            <div class="timeline">
+              <div class="timeline__item timeline__item--award">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2022-2</span>
+                <h3 class="timeline__title">🏆 제1차 연차사색대회 최우수팀 수상</h3>
+                <p class="timeline__desc">
+                  '디지털 시대의 심리학(Psychology in the Digital Age)'을 주제로 한 중앙대학교
+                  심리학과 학술 소모임 '사색' 주최 대회에서 최우수팀으로 선정되었습니다.
+                  <span class="timeline__meta">지도교수 · 김재휘 교수님</span>
+                </p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2022 겨울 ~ 2023.02</span>
+                <h3 class="timeline__title">한국대학생심리학회 3.5기 수료</h3>
+                <p class="timeline__desc">전국 대학생이 모인 한국대학생심리학회 3.5기에서 인지신경 분야 과정을 수료하며 관심 분야의 시야를 넓혔습니다.</p>
+              </div>
+              <div class="timeline__item timeline__item--award">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2023-1</span>
+                <h3 class="timeline__title">🏆 한국심리학회 학부생 포스터 부문 우수상</h3>
+                <p class="timeline__desc">
+                  제77차 한국심리학회 연차학술대회 'AI시대, 다시 생각하는 Human Mind'에서
+                  연구 책임자(제1저자)로서 연구를 주도하여 학부생 포스터 부문 우수상을 수상했습니다.
+                  <span class="timeline__meta">제1저자 · 최재엽　|　교신저자/지도교수 · 조수현 교수님</span>
+                </p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2023 1·2학기</span>
+                <h3 class="timeline__title">학술 소모임 '사색' 차장</h3>
+                <p class="timeline__desc">중앙대학교 심리학과 학술 소모임 '사색'의 차장으로 활동하며 학술 모임 운영을 이끌었습니다.</p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2023-2</span>
+                <h3 class="timeline__title">'인지신경과학 연구 맛보기' 프로그램 진행</h3>
+                <p class="timeline__desc">
+                  학술 소모임 '사색'이 주관한 '인지신경과학 연구 맛보기' 프로그램을
+                  활동책임자로서 직접 기획하고 운영했습니다.
+                  <span class="timeline__meta">활동책임자 · 최재엽</span>
+                </p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2023 겨울 ~ 2024.02</span>
+                <h3 class="timeline__title">BCSC 5기 수료</h3>
+                <p class="timeline__desc">
+                  뇌와 인지에 관심 있는 학부생들이 모인 학회 BCSC(Brain and Cognitive Science Community)
+                  5기에서 '뇌인지 C조'로 활동하며 전공 역량과 시야를 넓혔습니다.
+                </p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2024.07 ~ 2026.03</span>
+                <h3 class="timeline__title">🪖 군 복무</h3>
+                <p class="timeline__desc">대한민국 병역의 의무를 성실히 이행하는 한편, 복무 중에도 관심 분야 공부를 꾸준히 이어갔습니다.</p>
+                <details class="timeline__details">
+                  <summary>
+                    <span class="summary-closed">복무 중 학습 내용 펼쳐보기</span>
+                    <span class="summary-open">학습 내용 접기</span>
+                  </summary>
+                  <ul class="timeline__list">
+                    <li><strong>인지신경과학</strong> (Cognitive Neuroscience, 3rd Edition) 학습</li>
+                    <li>
+                      MIT 9.13 <strong>The Human Brain</strong> (Spring 2019 · Nancy Kanwisher) 수강
+                      <span class="timeline__sub">— MIT OpenCourseWare(YouTube) 활용</span>
+                      <p class="note-caption">강의를 들으며 직접 정리한 노트 <span class="note-caption__hint">(예시)</span></p>
+                      <!-- 노트 이미지를 images/notes/note-1.jpg ~ note-3.jpg 로 넣으면 자동 표시됩니다 -->
+                      <div class="note-gallery">
+                        <div class="note-thumb"><img src="images/notes/note-1.jpg" alt="인지신경과학 정리 노트 1" data-lightbox onerror="this.remove()" /><span>노트 1</span></div>
+                        <div class="note-thumb"><img src="images/notes/note-2.jpg" alt="인지신경과학 정리 노트 2" data-lightbox onerror="this.remove()" /><span>노트 2</span></div>
+                        <div class="note-thumb"><img src="images/notes/note-3.jpg" alt="인지신경과학 정리 노트 3" data-lightbox onerror="this.remove()" /><span>노트 3</span></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="timeline__note">그 외 · <strong>맨큐의 경제학</strong>, <strong>경제경영수학 길잡이</strong>(Fundamental Methods of Mathematical Economics) 학습</p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- 그 외 활동 (보조 트랙: 덜 강조) -->
+          <div class="timeline-track timeline-track--minor">
+            <h3 class="timeline-track__title">✨ 그 외 활동</h3>
+            <div class="timeline">
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2022</span>
+                <h3 class="timeline__title">학생회 'BE:HIND' 홍보부 부장</h3>
+                <p class="timeline__desc">중앙대학교 심리학과 학생회 'BE:HIND' 홍보부 부장을 맡아 학과 소식과 행사를 알렸습니다.</p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2023-1</span>
+                <h3 class="timeline__title">밴드 소모임 'SPSS' 차장</h3>
+                <p class="timeline__desc">중앙대학교 심리학과 밴드 소모임 'SPSS'의 차장으로서 회계·재무와 기획 보조 등을 맡아 동아리 운영을 도왔습니다.</p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <span class="timeline__date">2024</span>
+                <h3 class="timeline__title">새내기 새로배움터 심리학과 기획단장</h3>
+                <p class="timeline__desc">심리학과 새내기 새로배움터(새터)의 기획단장으로서 학과 프로그램 총기획과 예산 관리, 운영을 책임지며 신입생들의 첫 시작을 이끌었습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- 프로젝트 -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <h2 class="section__title">프로젝트</h2>
+        <p class="section__lead">진행했던 프로젝트들을 소개합니다.</p>
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-card__thumb">📁</div>
+            <div class="project-card__body">
+              <h3>프로젝트 제목 1</h3>
+              <p>프로젝트에 대한 간단한 설명을 적어주세요. 어떤 문제를 해결했고 무엇을 배웠는지 적으면 좋습니다.</p>
+              <div class="project-card__tags">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" target="_blank" rel="noopener">데모</a>
+                <a href="#" target="_blank" rel="noopener">코드</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__thumb">🚀</div>
+            <div class="project-card__body">
+              <h3>프로젝트 제목 2</h3>
+              <p>프로젝트에 대한 간단한 설명을 적어주세요. 사용한 기술과 맡은 역할을 함께 적으면 좋습니다.</p>
+              <div class="project-card__tags">
+                <span>Python</span><span>API</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" target="_blank" rel="noopener">데모</a>
+                <a href="#" target="_blank" rel="noopener">코드</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__thumb">💡</div>
+            <div class="project-card__body">
+              <h3>프로젝트 제목 3</h3>
+              <p>프로젝트에 대한 간단한 설명을 적어주세요. 결과나 성과가 있다면 수치로 보여주면 더 좋습니다.</p>
+              <div class="project-card__tags">
+                <span>학습</span><span>실험</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" target="_blank" rel="noopener">데모</a>
+                <a href="#" target="_blank" rel="noopener">코드</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연락처 -->
+    <section class="section" id="contact">
+      <div class="container contact">
+        <h2 class="section__title">연락처</h2>
+        <p class="section__lead">언제든 편하게 연락 주세요!</p>
+        <a href="mailto:myjai132@gmail.com" class="btn btn--primary">이메일 보내기</a>
+        <div class="contact__socials">
+          <a href="#" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">Blog</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> 최재엽 · Built with GitHub Pages</p>
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> 최재엽. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- 이미지 라이트박스(클릭 확대) -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="확대 이미지" />
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
