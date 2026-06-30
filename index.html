@@ -32,10 +32,6 @@
       --serif: "Newsreader", Georgia, serif;
       --sans: "Noto Sans KR", -apple-system, "Malgun Gothic", sans-serif;
     }
-    [data-theme="dark"] {
-      --accent: #7aa2e3; --accent-soft: #1e2a3d; --bg: #11151c;
-      --surface: #181d26; --text: #e6e8ec; --text-muted: #9aa3b2; --border: #2a313c;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -60,10 +56,6 @@
     .nav__links { list-style: none; display: flex; gap: 1.1rem; margin-left: auto; font-size: .9rem; flex-wrap: wrap; }
     .nav__links a { color: var(--text-muted); }
     .nav__links a:hover { color: var(--accent); text-decoration: none; }
-    .theme-toggle {
-      background: none; border: 1px solid var(--border); border-radius: 6px;
-      width: 34px; height: 34px; cursor: pointer; font-size: 1rem; display: grid; place-items: center; color: inherit;
-    }
 
     /* ===== HERO ===== */
     .hero { padding: 3.5rem 1.25rem 2rem; }
@@ -109,7 +101,6 @@
       display: inline-block; background: #fff6e0; color: #9a6b00;
       font-size: .74rem; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; margin-left: .3rem;
     }
-    [data-theme="dark"] .award-badge { background: #3a2f12; color: #e8c876; }
 
     /* ===== 태그 ===== */
     .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
@@ -184,7 +175,6 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="다크 모드 전환">🌙</button>
     </nav>
   </header>
 
@@ -201,7 +191,7 @@
           <h1 class="hero__name">최재엽 <span class="hero__name-en">Jaeyeob Choi</span></h1>
           <p class="hero__tagline">
             중앙대학교 심리학과<br />
-            관심 분야: Neuroscience
+            관심 분야: Neuroscience, Visual Perception
           </p>
           <div class="hero__links">
             <a href="mailto:myjai132@gmail.com">✉ Email</a>
@@ -255,13 +245,12 @@
       </p>
       <p class="prose">Here are some of the keywords I am eager to explore:</p>
       <div class="tags">
-        <span class="tag" title="Fusiform Face Area">FFA</span>
         <span class="tag" title="Parahippocampal Place Area">PPA</span>
-        <span class="tag" title="Extrastriate Body Area">EBA</span>
+        <span class="tag" title="Retrosplenial Cortex">RSC</span>
         <span class="tag" title="Occipital Place Area">OPA</span>
+        <span class="tag" title="Fusiform Face Area">FFA</span>
         <span class="tag">Navigation</span>
-        <span class="tag">Affective Cognition</span>
-        <span class="tag">Language Processing</span>
+        <span class="tag">Illusion</span>
       </div>
       <p class="subhead">Long-term Vision</p>
       <p class="prose">
@@ -274,6 +263,16 @@
         connect these insights with engineering to develop practical technologies that genuinely
         advance human happiness.
       </p>
+      <p class="prose">Here are some keywords I am willing to explore in the future:</p>
+      <div class="tags">
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag" title="Large Language Model">LLM</span>
+        <span class="tag">Language Processing</span>
+        <span class="tag">Macroeconomics</span>
+        <span class="tag">Linear Algebra</span>
+        <span class="tag">Computational Neuroscience</span>
+        <span class="tag">Biomedical Engineering</span>
+      </div>
     </section>
 
     <!-- ============ PUBLICATIONS & PRESENTATIONS ============ -->
@@ -281,11 +280,11 @@
       <h2 class="section__title">Publications &amp; Presentations</h2>
       <ol class="pub-list">
         <li>
-          <strong>J. Choi</strong><sup>†</sup>, S. Han, J. Hong, S. Ra, S. Bae, E. Lee, S. Cho<sup>*</sup>.
-          <em>"The Effect of Stimulus Type on Visual Field Advantages."</em>
-          Poster presented at the 77th Annual Conference of the Korean Psychological Association,
-          "AI시대, 다시 생각하는 Human Mind," 2023.
-          <span class="muted">— 학부생 포스터 부문 우수상 (Best Undergraduate Poster Award)</span>
+          <strong>Choi, J.</strong><sup>†</sup>, Han, S., Hong, J., Ra, S., Bae, S., Lee, E., &amp; Cho, S.<sup>*</sup>
+          (2023). The Effect of Stimulus Type on Visual Field Advantages.
+          Poster presented at the <em>77th Annual Conference of the Korean Psychological Association
+          ("AI시대, 다시 생각하는 Human Mind")</em>, Korea.
+          <span class="muted">— 학부생 포스터 부문 우수상 (Undergraduate Poster Excellence Award)</span>
           <a href="Choi-2023-Visual-Field-Advantages.pdf" target="_blank" rel="noopener" class="pdf-link">PDF</a>
           <a href="Choi-2023-Visual-Field-Advantages-ab.pdf" target="_blank" rel="noopener" class="pdf-link">Abstract</a>
         </li>
@@ -302,7 +301,7 @@
         <li class="timeline__item">
           <div class="timeline__date">2023</div>
           <div class="timeline__body">
-            <h3>한국심리학회 학부생 포스터 부문 우수상 <span class="award-badge">🏆 AWARD</span></h3>
+            <h3>한국심리학회 학부생 포스터 부문 우수상</h3>
             <p>제77차 한국심리학회 연차학술대회 'AI시대, 다시 생각하는 Human Mind'에서 연구 책임자(제1저자)로서 연구를 주도하여 수상.</p>
             <p class="muted">교신저자/지도교수 · 조수현 교수님</p>
             <div class="gallery">
@@ -311,13 +310,12 @@
               <a href="award/award-3.jpg" class="gallery__item" data-lightbox><img src="award/award-3.jpg" alt="우수상 상장과 꽃다발" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
               <a href="award/award-4.jpg" class="gallery__item" data-lightbox><img src="award/award-4.jpg" alt="학회 현수막 앞 상장" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
             </div>
-            <p class="gallery-caption">📷 포스터 발표·시상 현장 · 썸네일을 클릭하면 크게 볼 수 있어요.</p>
           </div>
         </li>
         <li class="timeline__item">
           <div class="timeline__date">2022</div>
           <div class="timeline__body">
-            <h3>제1차 연차사색대회 최우수팀 <span class="award-badge">🏆 AWARD</span></h3>
+            <h3>제1차 연차사색대회 최우수팀</h3>
             <p>중앙대학교 심리학과 학술 소모임 '사색'이 주최한 '디지털 시대의 심리학(Psychology in the Digital Age)' 대회에서 <strong>'디지털 시대, 스마트기기는 우리에게 어떤 인지적 영향을 미치는가?'</strong>를 주제로 발표하여 최우수팀으로 선정.</p>
             <p class="muted">지도교수 · 김재휘 교수님</p>
           </div>
@@ -329,7 +327,7 @@
     <section id="experience" class="section">
       <h2 class="section__title">Experience &amp; Activities</h2>
 
-      <p class="subhead">🔬 학술 활동</p>
+      <p class="subhead">학술 활동</p>
       <ul class="timeline">
         <li class="timeline__item">
           <div class="timeline__date">2023 겨울 ~ 2024.02</div>
@@ -354,7 +352,6 @@
               <a href="inyeonmat/inyeonmat-7.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-7.png" alt="인지신경과학 연구 맛보기 운영 기록 7 — 발표 타임테이블" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
               <a href="inyeonmat/inyeonmat-8.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-8.png" alt="인지신경과학 연구 맛보기 운영 기록 8 — 발표 타임테이블" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
             </div>
-            <p class="gallery-caption">📷 프로그램 운영 기록 · 썸네일을 클릭하면 크게 볼 수 있어요.</p>
           </div>
         </li>
         <li class="timeline__item">
@@ -363,7 +360,7 @@
             <h3>'학부생 포스터팀' 팀장 · 학부 연구 수행</h3>
             <p>약 6개월간 <strong>Cognitive Psychology and Neuroscience Laboratory</strong>의 주간 랩미팅에 참석하여 대학원생·지도교수님께 연구 피드백을 받았고, 팀 회의를 주 2회 진행하며 연구를 이끎. Eye-tracker를 활용한 행동 실험 프로그램을 직접 기획하고 약 2개월간 실험을 수행, 그 결과를 포스터로 게재하여 우수상을 수상.</p>
             <details class="research-materials">
-              <summary>🔬 실험 자료 자세히 보기</summary>
+              <summary>실험 자료 자세히 보기</summary>
               <p style="margin-top:.6rem">
                 시각장(좌·우)에 따라 <strong>얼굴 자극</strong>과 <strong>단어 자극</strong>의 처리 우세가 어떻게
                 달라지는지를 반응시간(RT) 기반 행동 실험으로 측정. 참가자는 손잡이 설문(Edinburgh·Waterloo·Dutch
@@ -414,25 +411,24 @@
               <a href="kssp-1.png" class="gallery__item" data-lightbox><img src="kssp-1.png" alt="한국대학생심리학회 인지신경과학 스터디 개요·방식" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
               <a href="kssp-2.png" class="gallery__item" data-lightbox><img src="kssp-2.png" alt="한국대학생심리학회 인지신경과학 스터디 커리큘럼" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
             </div>
-            <p class="gallery-caption">📷 스터디 개요·방식·커리큘럼 · 클릭하면 크게 볼 수 있어요.</p>
           </div>
         </li>
       </ul>
 
-      <p class="subhead">🤝 리더십 · 기타 활동</p>
+      <p class="subhead">리더십 · 기타 활동</p>
       <ul class="timeline">
         <li class="timeline__item">
           <div class="timeline__date">2024</div>
           <div class="timeline__body">
-            <h3>새내기 새로배움터 심리학과 기획단장</h3>
-            <p>심리학과 새터 기획단장으로서 학과 프로그램 총기획·예산 관리·운영을 책임.</p>
+            <h3>사회과학대학 새내기 새로배움터 심리학과 기획단장</h3>
+            <p>약 1억원 규모의 새내기 새로배움터 행사의 심리학과 기획단장으로서 학과 프로그램 총기획·예산 관리·운영을 책임.</p>
           </div>
         </li>
         <li class="timeline__item">
           <div class="timeline__date">2023</div>
           <div class="timeline__body">
-            <h3>밴드 소모임 'SPSS' 차장</h3>
-            <p>차장으로서 회계·재무와 기획 보조를 담당했고, 세션 멤버(키보드)로 밴드 활동에도 직접 참여.</p>
+            <h3>심리학과 밴드 소모임 'SPSS' 차장</h3>
+            <p>80여명 규모의 과내 소모임 차장으로서 회계·재무와 기획 보조를 담당했고, 세션 멤버(키보드)로 밴드 활동에도 직접 참여.</p>
           </div>
         </li>
         <li class="timeline__item">
@@ -444,7 +440,7 @@
         </li>
       </ul>
 
-      <p class="subhead">🪖 군 복무</p>
+      <p class="subhead">그 외 경력</p>
       <ul class="timeline">
         <li class="timeline__item">
           <div class="timeline__date">2024.07 ~ 2026.03</div>
@@ -464,7 +460,6 @@
           <h4>분석 · 통계</h4>
           <div class="tags">
             <span class="tag">Python</span>
-            <span class="tag">MATLAB</span>
             <span class="tag">SPSS</span>
             <span class="tag">Excel</span>
           </div>
@@ -509,19 +504,6 @@
   <script>
     // 푸터 연도 자동 표시
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // 다크 모드 토글 (선택을 브라우저에 기억)
-    const toggle = document.getElementById("theme-toggle");
-    const root = document.documentElement;
-    if (localStorage.getItem("theme") === "dark") {
-      root.setAttribute("data-theme", "dark");
-      toggle.textContent = "☀️";
-    }
-    toggle.addEventListener("click", () => {
-      const isDark = root.getAttribute("data-theme") === "dark";
-      if (isDark) { root.removeAttribute("data-theme"); toggle.textContent = "🌙"; localStorage.setItem("theme", "light"); }
-      else { root.setAttribute("data-theme", "dark"); toggle.textContent = "☀️"; localStorage.setItem("theme", "dark"); }
-    });
 
     // 이미지 클릭 시 라이트박스로 확대
     const lb = document.getElementById("lightbox");
