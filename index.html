@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>최재엽 | Academic CV</title>
+  <meta name="description" content="최재엽 (Jaeyeob Choi) — 중앙대학교 심리학과. 뇌과학과 계산신경과학에 관심을 둔 학부생의 학업·연구·활동 기록." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       토큰 — paulkalkbrenner.net/tour 의 CSS 변수 체계를 따름
+       (--color--dark/light/gray, --page-pad, --col-pad, --space-*)
+       ============================================================ */
+    :root {
+      --dark: #000;
+      --light: #fff;
+      --gray: #c5c5c5;
+      --gray-2: #f4f4f4;
+      --gray-3: #8a8a8a;
+      --dark-20: color-mix(in srgb, var(--dark), transparent 80%);
+      --dark-40: color-mix(in srgb, var(--dark), transparent 60%);
+      --accent: #a7ff9c;
+      --page-pad: clamp(1rem, 2.5vw, 1.75rem);
+      --col-pad: .625rem;
+      --space-xs: .5rem;
+      --space-s: 1rem;
+      --space-sm: 2rem;
+      --space-m: clamp(3rem, 6vw, 5rem);
+      --space-l: clamp(5rem, 10vw, 8rem);
+      --space-xl: clamp(6rem, 13vw, 11rem);
+      --sans: "Inter", "Noto Sans KR", -apple-system, "Malgun Gothic", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--sans); color: var(--dark); background: var(--light); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+    ul, ol { list-style: none; }
+
+    /* ===== 섹션 테마 (참조: data-section-theme) ===== */
+    section[data-section-theme="dark"] { background: var(--dark); color: var(--light); }
+    section[data-section-theme="dark"] .p-l { color: var(--gray); }
+    section[data-section-theme="dark"] .p-l strong { color: var(--light); }
+
+    /* ===== 컨테이너 / 8열 그리드 (참조: .container .row .col .u-col-N) ===== */
+    .container { padding-left: var(--page-pad); padding-right: var(--page-pad); max-width: 1320px; margin-left: auto; margin-right: auto; }
+    .row { display: flex; flex-flow: row wrap; margin-left: calc(-1 * var(--col-pad)); margin-right: calc(-1 * var(--col-pad)); }
+    .col { padding-left: var(--col-pad); padding-right: var(--col-pad); flex: 1 1 0; min-width: 0; }
+    .u-col-1 { flex: 0 0 12.5%; max-width: 12.5%; }
+    .u-col-2 { flex: 0 0 25%; max-width: 25%; }
+    .u-col-3 { flex: 0 0 37.5%; max-width: 37.5%; }
+    .u-col-4 { flex: 0 0 50%; max-width: 50%; }
+    .u-col-5 { flex: 0 0 62.5%; max-width: 62.5%; }
+    .u-col-6 { flex: 0 0 75%; max-width: 75%; }
+    .u-col-8 { flex: 0 0 100%; max-width: 100%; }
+    .u-align-end { display: flex; justify-content: flex-end; }
+    .spacer { height: var(--space-m); }
+    .spacer--s { height: var(--space-sm); }
+    .spacer--l { height: var(--space-l); }
+    .spacer--xl { height: var(--space-xl); }
+
+    /* ===== 타이포 (참조: h1 12.5em/-.05em/.8, h2 3em/-.02em/.9, u-text-caps) ===== */
+    h1 { font-size: clamp(4.2rem, 16vw, 12.5rem); font-weight: 800; letter-spacing: -.05em; line-height: .8; word-break: keep-all; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; letter-spacing: -.02em; line-height: .95; }
+    .u-text-caps { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 600; }
+    .square { display: inline-block; width: .55em; height: .55em; background: currentColor; margin-right: .65em; vertical-align: middle; position: relative; top: -.08em; }
+    .p-l { font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.4; letter-spacing: -.015em; }
+    .p-l + .p-l { margin-top: 1rem; }
+    .muted { color: var(--gray-3); font-size: .9rem; }
+    .lang-en { color: var(--gray-3); font-size: .92rem; line-height: 1.55; }
+
+    /* ===== 내비게이션 ===== */
+    .site-header { position: sticky; top: 0; z-index: 20; background: var(--light); border-bottom: 1px solid var(--dark); }
+    .nav { display: flex; align-items: center; gap: 1.6rem; height: 52px; }
+    .nav__brand { font-weight: 800; letter-spacing: -.03em; font-size: 1rem; }
+    .nav__links { display: flex; gap: 1.3rem; margin-left: auto; }
+    .nav__links a, .nav__ext { text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; color: var(--dark-40); transition: color .15s; white-space: nowrap; }
+    .nav__links a:hover, .nav__ext:hover { color: var(--dark); }
+    .nav__ext::after { content: " ↗"; }
+
+    /* ===== 히어로: 제목만 (참조: tour-dates__hero) ===== */
+    .hero { padding-top: var(--space-l); }
+    .hero small { display: block; font-size: clamp(1.2rem, 3vw, 2.4rem); font-weight: 400; letter-spacing: -.02em; color: var(--gray-3); margin-top: .35em; line-height: 1; }
+
+    /* ===== 섹션 상단: 왼쪽 라벨 · 오른쪽 리드 (참조: .section-top) ===== */
+    section { padding-top: var(--space-s); padding-bottom: var(--space-s); }
+    .section-top { align-items: flex-start; }
+    .section-top__start h3 { display: flex; align-items: center; }
+    .section-top__p { max-width: 44ch; }
+
+    /* ===== 미디어 (참조: .media-w ratio-1-1) ===== */
+    .media-w { aspect-ratio: 1 / 1; overflow: hidden; background: var(--gray-2); max-width: 420px; }
+    .media-w img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform .8s ease; }
+    .media-w:hover img { transform: scale(1); }
+
+    /* ===== 표 형식 목록 (참조: tour-dates__container / header / item) ===== */
+    .tbl { border-top: 1px solid var(--dark); }
+    .tbl__head { padding: .6rem 0; border-bottom: 1px solid var(--dark); }
+    .tbl__head span { text-transform: uppercase; letter-spacing: .08em; font-size: .64rem; font-weight: 600; color: var(--gray-3); }
+    .tbl__item { border-bottom: 1px solid var(--dark-20); }
+    .tbl__row { display: block; position: relative; isolation: isolate; padding: 1.05rem 0; cursor: pointer; list-style: none; }
+    .tbl__row::-webkit-details-marker { display: none; }
+    .tbl__row::before {
+      content: ""; position: absolute; top: 0; bottom: 0; left: calc(-1 * var(--page-pad)); right: calc(-1 * var(--page-pad));
+      background: var(--gray-2); opacity: 0; transition: opacity .2s ease; z-index: -1;
+    }
+    .tbl__row:hover::before, details[open] > .tbl__row::before { opacity: 1; }
+    .tbl__row .row { align-items: baseline; }
+    .tbl__row time, .tbl__row .cell { display: block; }
+    .tbl__row time { font-variant-numeric: tabular-nums; font-size: .9rem; color: var(--dark); white-space: nowrap; }
+    .tbl__row .cell--title { font-weight: 700; letter-spacing: -.01em; font-size: 1.02rem; line-height: 1.35; }
+    .tbl__row .cell--where { color: var(--gray-3); font-size: .92rem; }
+    .btn-text { text-transform: uppercase; letter-spacing: .08em; font-size: .66rem; font-weight: 600; white-space: nowrap; border-bottom: 1px solid currentColor; padding-bottom: .1em; }
+    .btn-text::before { content: attr(data-open); }
+    details[open] > .tbl__row .btn-text::before { content: attr(data-close); }
+    a.btn-text:hover { opacity: .55; }
+    .tbl__detail { padding: .4rem 0 1.8rem; }
+    .tbl__detail .row { align-items: flex-start; }
+    .tbl__detail p + p { margin-top: .55rem; }
+    .tbl__detail .actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
+    .award-badge { display: inline-block; text-transform: uppercase; letter-spacing: .08em; font-size: .6rem; font-weight: 700; border: 1px solid var(--dark); padding: .28em .55em; margin-left: .5rem; vertical-align: middle; }
+
+    /* ===== 버튼 ===== */
+    .btn { display: inline-block; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; border: 1px solid currentColor; padding: .55em 1.1em; line-height: 1; white-space: nowrap; transition: background .15s, color .15s; }
+    .btn:hover { background: var(--dark); color: var(--light); }
+    section[data-section-theme="dark"] .btn:hover { background: var(--light); color: var(--dark); }
+
+    /* ===== 태그 ===== */
+    .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin: .5rem 0 1rem; }
+    .tag { text-transform: uppercase; letter-spacing: .06em; font-size: .64rem; font-weight: 600; border: 1px solid currentColor; padding: .38em .75em; line-height: 1; }
+    .tag--primary { background: var(--dark); color: var(--light); border-color: var(--dark); }
+    section[data-section-theme="dark"] .tag--primary { background: var(--light); color: var(--dark); border-color: var(--light); }
+    .mat-label { text-transform: uppercase; letter-spacing: .08em; font-size: .66rem; font-weight: 600; color: var(--gray-3); margin: 1.2rem 0 .3rem; }
+    .sub-label { display: flex; align-items: center; margin: var(--space-sm) 0 .8rem; }
+    .sub-label:first-child { margin-top: 0; }
+
+    /* ===== 갤러리 캐러셀 (참조: 01 / 08 · Prev Next) ===== */
+    .carousel { position: relative; }
+    .carousel__track { display: flex; gap: var(--col-pad); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; }
+    .carousel__track::-webkit-scrollbar { display: none; }
+    .carousel__slide { flex: 0 0 62%; scroll-snap-align: start; aspect-ratio: 4 / 3; overflow: hidden; background: var(--gray-2); cursor: zoom-in; border: 1px solid var(--dark-20); }
+    .carousel__slide img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel__bar { display: flex; align-items: center; justify-content: space-between; margin-top: .9rem; }
+    .carousel__count { font-variant-numeric: tabular-nums; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; }
+    .carousel__nav { display: flex; gap: 1.2rem; }
+    .carousel__nav button { background: none; border: 0; font: inherit; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; cursor: pointer; color: var(--dark); padding: 0; }
+    .carousel__nav button:hover { opacity: .5; }
+    .carousel__cap { margin-top: .6rem; }
+
+    /* ===== 연락 블록 (참조: newsletter, 가운데 정렬) ===== */
+    .cta { text-align: center; padding: var(--space-l) 0; border-top: 1px solid var(--dark); }
+    .cta h2 { margin-bottom: 1rem; }
+    .cta p { max-width: 40ch; margin: 0 auto; }
+    .cta__actions { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.6rem; }
+
+    /* ===== 스킬 ===== */
+    .skills h4 { text-transform: uppercase; letter-spacing: .08em; font-size: .66rem; font-weight: 600; color: var(--gray-3); margin-bottom: .4rem; }
+    .skills .col + .col { margin-top: 0; }
+
+    /* ===== 실험 자료 (details 안의 details) ===== */
+    .research-materials { border-left: 1px solid var(--dark); padding-left: 1rem; margin-top: 1rem; }
+    .research-materials > summary { cursor: pointer; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; list-style: none; }
+    .research-materials > summary::-webkit-details-marker { display: none; }
+    .research-materials > summary::after { content: " +"; }
+    .research-materials[open] > summary::after { content: " –"; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: .5rem; margin-top: .8rem; max-width: 480px; }
+    .gallery__item { display: block; border: 1px solid var(--dark-20); overflow: hidden; aspect-ratio: 4 / 3; cursor: zoom-in; background: var(--gray-2); }
+    .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .2s; }
+    .gallery__item:hover img { transform: scale(1.05); }
+    .word-strip { display: flex; flex-wrap: wrap; gap: .5rem; margin: .4rem 0 .2rem; }
+    .word-chip { background: var(--light); border: 1px solid var(--dark-20); width: 88px; height: 58px; display: grid; place-items: center; padding: .3rem; }
+    .word-chip img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    /* ===== 라이트박스 ===== */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 100; padding: 1rem; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 94vw; max-height: 90vh; object-fit: contain; }
+    .lightbox__hint { position: fixed; top: 1rem; right: 1.2rem; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .7rem; font-weight: 600; }
+
+    /* ===== 푸터 (참조: Links / Support / Follow 3열 + 저작권) ===== */
+    .site-footer { border-top: 1px solid var(--dark); padding: var(--space-m) 0 var(--space-sm); }
+    .site-footer h4 { text-transform: uppercase; letter-spacing: .08em; font-size: .66rem; font-weight: 600; color: var(--gray-3); margin-bottom: .7rem; }
+    .site-footer li { margin-bottom: .35rem; }
+    .site-footer li a { font-size: .95rem; }
+    .site-footer li a:hover { text-decoration: underline; }
+    .site-footer__copy { margin-top: var(--space-m); padding-top: 1rem; border-top: 1px solid var(--dark-20); text-transform: uppercase; letter-spacing: .08em; font-size: .64rem; font-weight: 600; color: var(--gray-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+
+    /* ===== 등장 애니메이션 (참조: data-reveal-group / data-stagger) ===== */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; transition-delay: calc(var(--i, 0) * 35ms); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .media-w img { transition: none; } }
+
+
+    /* ===== 패널 내비게이션: 한 화면에 한 섹션, 슬라이드 전환 ===== */
+    .panels { position: relative; overflow: hidden; }
+    .panel { display: none; }
+    .panel.is-active { display: block; }
+    .panel.is-entering { animation: panelIn .55s cubic-bezier(.2,.7,.2,1) both; }
+    .panel.is-leaving { display: block; position: absolute; top: 0; left: 0; width: 100%; animation: panelOut .35s ease both; pointer-events: none; }
+    @keyframes panelIn { from { opacity: 0; transform: translateX(var(--dir, 64px)); } to { opacity: 1; transform: none; } }
+    @keyframes panelOut { to { opacity: 0; transform: translateX(calc(-1 * var(--dir, 64px))); } }
+    .panel-hero { padding-top: var(--space-m); }
+    .panel-hero .spacer--l { height: var(--space-m); }
+    .nav__links a.is-active { color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: .15em; }
+    .nav__toggle { display: none; background: none; border: 0; font: inherit; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 600; cursor: pointer; margin-left: auto; padding: 0; color: var(--dark); }
+    @media (prefers-reduced-motion: reduce) { .panel.is-entering, .panel.is-leaving { animation: none; } .panel.is-leaving { display: none; } }
+    @media (max-width: 760px) {
+      .nav__toggle { display: inline-block; }
+      .nav__ext { display: none; }
+      .nav.is-open .nav__links {
+        display: flex; flex-direction: column; gap: 1.2rem; position: fixed; top: 52px; left: 0; right: 0; bottom: 0;
+        background: var(--light); padding: 2rem var(--page-pad); margin: 0; z-index: 30; border-top: 1px solid var(--dark);
+      }
+      .nav.is-open .nav__links a { font-size: 1.6rem; letter-spacing: -.02em; text-transform: none; font-weight: 700; color: var(--dark); border: 0; }
+    }
+
+    /* ===== 제목 행: 한글 이름 왼쪽 · 영문명 오른쪽 끝(약하게) ===== */
+    .title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .title-sub { font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 500; color: var(--gray-3); letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
+    .tbl--inset .tbl__row::before { left: 0; right: 0; }
+
+    /* ===== 겹친 사진 묶음: 마우스를 올리면 부채꼴로 펼쳐짐 ===== */
+    .stack { position: relative; aspect-ratio: 1 / 1; width: 100%; max-width: 300px; }
+    .stack a {
+      position: absolute; width: 70%; aspect-ratio: 4 / 3; overflow: hidden; display: block; cursor: zoom-in;
+      border: 1px solid var(--dark-20); background: var(--gray-2); box-shadow: 0 12px 30px rgba(0,0,0,.14);
+      transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;
+    }
+    .stack a img { width: 100%; height: 100%; object-fit: cover; }
+    .stack a:nth-child(1) { top: 4%; left: 0; transform: rotate(-4deg); z-index: 1; }
+    .stack a:nth-child(2) { top: 34%; left: 30%; transform: rotate(3deg); z-index: 2; }
+    .stack:hover a:nth-child(1) { transform: rotate(-8deg) translate(-10%, -10%); box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+    .stack:hover a:nth-child(2) { transform: rotate(6deg) translate(12%, 10%); box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+    .stack a:hover { z-index: 3; }
+    .stack--doc { max-width: 380px; }
+    .stack--doc a { width: 58%; aspect-ratio: 3 / 4; background: var(--light); }
+    .stack--doc a img { object-fit: cover; object-position: top; }
+    .stack--doc a:nth-child(1) { top: 0; left: 0; transform: rotate(-4deg); }
+    .stack--doc a:nth-child(2) { top: 18%; left: 36%; transform: rotate(3deg); }
+    .stack--doc:hover a:nth-child(1) { transform: rotate(-8deg) translate(-8%, -4%); }
+    .stack--doc:hover a:nth-child(2) { transform: rotate(6deg) translate(8%, 6%); }
+    section[data-section-theme="dark"] .stack a { border-color: rgba(255,255,255,.28); box-shadow: 0 14px 34px rgba(0,0,0,.6); }
+    @media (max-width: 760px) { .stack--doc { max-width: 320px; margin-bottom: 2rem; } }
+    @media (max-width: 760px) {
+      .title-row { flex-direction: column; align-items: flex-start; gap: .6rem; }
+      .title-sub { padding-bottom: 0; }
+    }
+
+    /* ===== 모바일 ===== */
+    @media (max-width: 760px) {
+      body { font-size: 14.5px; }
+      .nav__links { display: none; }
+      .u-hide-sm { display: none !important; }
+      .u-col-sm-8 { flex: 0 0 100%; max-width: 100%; }
+      .u-col-sm-2 { flex: 0 0 25%; max-width: 25%; }
+      .u-col-sm-5 { flex: 0 0 62.5%; max-width: 62.5%; }
+      .u-col-sm-1 { flex: 0 0 12.5%; max-width: 12.5%; }
+      .section-top__p { margin-top: .8rem; }
+      .carousel__slide { flex-basis: 86%; }
+      .tbl__detail .u-col-1 { display: none; }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <!-- ============ 내비게이션 ============ -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="nav__brand">최재엽</a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav__ext" href="Choi-2023-Visual-Field-Advantages.pdf" target="_blank" rel="noopener">Poster</a>
+      <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </nav>
+  </header>
+
+  <main class="panels">
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="panel" data-section-theme="light">
+      <div class="panel-hero container">
+        <!-- 제목 띠: 왼쪽 이름(한글 크게 + 영문 작게) · 오른쪽 소속 블록 — 좌우 모두 채움 -->
+        <div class="row" style="align-items:flex-end">
+          <div class="col u-col-4 u-col-sm-8">
+            <h1 class="reveal">최재엽</h1>
+            <p class="title-sub reveal" style="--i:1; margin-top:.9rem">Jaeyeob Choi</p>
+          </div>
+          <div class="col u-col-4 u-col-sm-8">
+            <p class="u-text-caps reveal" style="--i:1; color:var(--gray-3)"><span class="square"></span>Department of Psychology · Chung-Ang University</p>
+            <p class="p-l reveal" style="--i:2; margin-top:.7rem">중앙대학교 심리학과 본전공 · 경제학부 부전공<br />관심 분야 — Computational Neuroscience</p>
+            <div class="reveal" style="--i:3; margin-top:1.2rem; display:flex; gap:.6rem; flex-wrap:wrap">
+              <a class="btn" href="mailto:zhi132@cau.ac.kr">Email</a>
+              <a class="btn" href="https://github.com/jaeyeobchoi" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="#publications">Publications</a>
+            </div>
+          </div>
+        </div>
+        <div class="spacer--l"></div>
+      </div>
+      <div class="container">
+        <!-- 왼쪽: 라벨 + 한글 소개 / 오른쪽: 영문 소개 -->
+        <div class="section-top row">
+          <div class="col u-col-4 u-col-sm-8">
+            <div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>About</h3></div>
+            <div class="section-top__p" style="margin-top:1rem">
+              <p class="p-l reveal">안녕하세요. 저는 중앙대학교에서 심리학과 경제학을 공부 중인 최재엽입니다.</p>
+              <p class="p-l reveal" style="--i:1">뇌과학으로 사람을 이해하고, 여러 학문을 배워 세상에 대한 이해를 넓혀 연구를 통해 인류 전반에 선한 영향력을 주고 싶습니다.</p>
+            </div>
+          </div>
+          <div class="col u-col-4 u-col-sm-8">
+            <div class="section-top__start" aria-hidden="true" style="visibility:hidden"><h3 class="u-text-caps"><span class="square"></span>About</h3></div>
+            <p class="lang-en reveal" style="--i:2; margin-top:1rem; max-width:54ch; font-size:1rem">
+              Hello, I am Jaeyeob Choi, currently studying Psychology at Chung-Ang University.
+              Through brain and neuroscience, I strive to understand people; and by broadening my understanding
+              of the world across diverse disciplines, I hope to contribute to advancing human happiness.
+            </p>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <!-- 사진 행: 겹친 사진(왼쪽 위) · 초상 · 오른쪽 Skills 표 — 좌우 모두 채움 -->
+        <div class="row" style="align-items:flex-end">
+          <div class="col u-col-2 u-hide-sm" style="align-self:flex-start">
+            <div class="stack reveal">
+              <a href="award/award-2.jpg" data-lightbox><img src="award/award-2.jpg" alt="포스터 발표 장면" loading="lazy" onerror="this.closest('a').remove()" /></a>
+              <a href="poster-research/setup-2.jpg" data-lightbox><img src="poster-research/setup-2.jpg" alt="실험 준비 중인 연구자" loading="lazy" onerror="this.closest('a').remove()" /></a>
+            </div>
+          </div>
+          <div class="col u-col-2 u-col-sm-8">
+            <figure class="media-w reveal">
+              <img src="profile.jpg" alt="최재엽 프로필 사진" onerror="this.closest('figure').style.display='none'" />
+            </figure>
+          </div>
+          <div class="col u-col-4 u-col-sm-8">
+            <p class="u-text-caps sub-label" style="margin-top:1.5rem"><span class="square"></span>Skills</p>
+            <div class="tbl tbl--inset" role="table">
+              <div class="tbl__head row" role="row">
+                <div class="col u-col-3"><span>Area</span></div>
+                <div class="col u-col-5"><span>Tools</span></div>
+              </div>
+              <div class="tbl__item reveal"><div class="tbl__row" style="cursor:default"><div class="row" style="align-items:center">
+                <div class="col u-col-3"><span class="cell cell--title">분석 · 통계</span></div>
+                <div class="col u-col-5"><div class="tags" style="margin:0"><span class="tag">Python</span><span class="tag">SPSS</span><span class="tag">Excel</span><span class="tag">MATLAB</span></div></div>
+              </div></div></div>
+              <div class="tbl__item reveal" style="--i:1"><div class="tbl__row" style="cursor:default"><div class="row" style="align-items:center">
+                <div class="col u-col-3"><span class="cell cell--title">실험</span></div>
+                <div class="col u-col-5"><div class="tags" style="margin:0"><span class="tag">아이트래커 (Eye-tracking)</span></div></div>
+              </div></div></div>
+              <div class="tbl__item reveal" style="--i:2"><div class="tbl__row" style="cursor:default"><div class="row" style="align-items:center">
+                <div class="col u-col-3"><span class="cell cell--title">Languages</span></div>
+                <div class="col u-col-5"><div class="tags" style="margin:0"><span class="tag">한국어 (모국어)</span><span class="tag">English</span></div></div>
+              </div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH INTERESTS (다크 섹션) ============ -->
+    <section id="research" class="panel" data-section-theme="dark">
+      <div class="panel-hero container"><h1 class="reveal">Research</h1><div class="spacer--l"></div></div>
+      <div class="container">
+        <div class="section-top row">
+          <div class="col u-col-4 u-col-sm-8">
+            <div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Research Interests</h3></div>
+            <div class="tags" style="margin-top:1.2rem">
+              <span class="tag tag--primary">Neuroscience</span>
+              <span class="tag">Cognitive Neuroscience</span>
+              <span class="tag">Computational Neuroscience</span>
+            </div>
+          </div>
+          <div class="col u-col-4 u-col-sm-8">
+            <div class="section-top__p">
+              <p class="p-l reveal">
+                사람을 이해하려면 뇌를 알아야 한다는 생각에서 출발했습니다. 지금 붙들고 있는 질문은
+                뇌가 경험을 어떻게 <strong>정서와 기억, 그리고 선택</strong>으로 바꾸는지, 그리고 그 과정이 어디서 어긋나
+                우울·불안이나 치매 같은 고통이 되는지입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row" style="align-items:flex-start">
+          <div class="col u-col-4 u-col-sm-8">
+            <!-- 포스터·초록 첫 장을 겹쳐 두고, 호버 시 펼침 · 클릭 시 PDF -->
+            <p class="u-text-caps reveal" style="color:var(--gray); margin-bottom:1rem"><span class="square"></span>2023 · KPA Poster &amp; Abstract</p>
+            <div class="stack stack--doc reveal" style="--i:1">
+              <a href="Choi-2023-Visual-Field-Advantages.pdf" target="_blank" rel="noopener" title="포스터 PDF"><img src="poster-research/poster-p1.png" alt="포스터 첫 장" loading="lazy" onerror="this.closest('a').remove()" /></a>
+              <a href="Choi-2023-Visual-Field-Advantages-ab.pdf" target="_blank" rel="noopener" title="초록 PDF"><img src="poster-research/abstract-p1.png" alt="초록 첫 장" loading="lazy" onerror="this.closest('a').remove()" /></a>
+            </div>
+          </div>
+          <div class="col u-col-4 u-col-sm-8">
+            <p class="u-text-caps" style="color:var(--gray)"><span class="square"></span>접근</p>
+            <p class="reveal" style="margin-top:.7rem; max-width:60ch">
+              학부에서는 행동 실험(반응시간·아이트래킹)으로 시작했습니다. 다음은 그 행동의 신경 기반을
+              신경영상으로 보는 것이고, 그다음은 수학과 계산 모델로 그 과정을 설명하는 것입니다.
+              아직 학부생이라 관심의 폭이 넓고, 석사·박사 과정에서 좁혀 갈 생각입니다.
+            </p>
+            <p class="lang-en reveal" style="--i:1; margin-top:.6rem; color:var(--gray)">
+              How the brain turns experience into emotion, memory, and choice — and where that process goes wrong.
+              Behavior first, then neuroimaging, then computational models.
+            </p>
+
+            <p class="mat-label" style="color:var(--gray)">해 본 것 (Done)</p>
+            <div class="tags">
+              <span class="tag">Visual field asymmetry</span>
+              <span class="tag">Face &amp; word perception</span>
+              <span class="tag">Reaction time</span>
+              <span class="tag">Eye-tracking</span>
+            </div>
+            <p class="mat-label" style="color:var(--gray)">읽고 있는 것 (Currently reading)</p>
+            <div class="tags">
+              <span class="tag">Anxiety &amp; amygdala</span>
+              <span class="tag">Hippocampus &amp; episodic memory</span>
+              <span class="tag">Decision-making</span>
+              <span class="tag">Computational models of behavior</span>
+            </div>
+            <p class="mat-label" style="color:var(--gray)">오래 두고 보는 것 (Long-term)</p>
+            <div class="tags">
+              <span class="tag" title="mainly Alzheimer's">Dementia</span>
+              <span class="tag">Machine learning</span>
+              <span class="tag">Macroeconomics</span>
+              <span class="tag">Linear algebra as a language</span>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Education</h1><div class="spacer--l"></div></div>
+      <div class="container">
+      <div class="section-top row">
+        <div class="col u-col-4 u-col-sm-8"><div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Education</h3></div></div>
+      </div>
+      <div class="spacer--s"></div>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Period</span></div>
+          <div class="col u-col-3 u-col-sm-5"><span>Program</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Institution</span></div>
+          <div class="col u-col-1 u-col-sm-1"></div>
+        </div>
+        <details class="tbl__item reveal">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>재학 중</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">심리학과 본전공 · 경제학부 부전공</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>중앙대학교 (Chung-Ang University)</p>
+              <p>본전공 · 심리학과 (Major in Psychology)</p>
+              <p>부전공 · 경제학부 (Minor in Economics)</p>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS & PRESENTATIONS ============ -->
+    <section id="publications" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Publications</h1><div class="spacer--l"></div></div>
+      <div class="container">
+      <div class="section-top row">
+        <div class="col u-col-4 u-col-sm-8"><div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Publications &amp; Presentations</h3></div></div>
+      </div>
+      <div class="spacer--s"></div>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Year</span></div>
+          <div class="col u-col-4 u-col-sm-6"><span>Title · Authors</span></div>
+          <div class="col u-col-2 u-hide-sm"><span>Venue</span></div>
+          <div class="col u-col-1"></div>
+        </div>
+        <!-- 펼침 없이 저자·제목이 바로 보이는 행 -->
+        <div class="tbl__item reveal"><div class="tbl__row" style="cursor:default"><div class="row" style="align-items:flex-start">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></div>
+          <div class="col u-col-4 u-col-sm-6">
+            <span class="cell cell--title">The Effect of Stimulus Type on Visual Field Advantages<span class="award-badge">우수상</span></span>
+            <p style="margin-top:.45rem; max-width:60ch">
+              <strong>Choi, J.</strong><sup>†</sup>, Han, S., Hong, J., Ra, S., Bae, S., Lee, E., &amp; Cho, S.<sup>*</sup> (2023).
+              Poster presented at the <em>77th Annual Conference of the Korean Psychological Association ("AI시대, 다시 생각하는 Human Mind")</em>, Korea.
+            </p>
+            <p class="muted" style="margin-top:.35rem">학부생 포스터 부문 우수상 · <sup>†</sup> First author &amp; Presenting author · <sup>*</sup> Corresponding author (조수현 교수님)</p>
+          </div>
+          <div class="col u-col-2 u-hide-sm"><span class="cell cell--where">제77차 한국심리학회 연차학술대회 · 학부생 포스터</span></div>
+          <div class="col u-col-1 u-col-sm-8" style="display:flex; flex-direction:column; gap:.4rem; align-items:flex-end">
+            <a href="Choi-2023-Visual-Field-Advantages.pdf" target="_blank" rel="noopener" class="btn">PDF</a>
+            <a href="Choi-2023-Visual-Field-Advantages-ab.pdf" target="_blank" rel="noopener" class="btn">Abstract</a>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ AWARDS & HONORS ============ -->
+    <section id="awards" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Awards</h1><div class="spacer--l"></div></div>
+      <div class="container">
+      <div class="section-top row">
+        <div class="col u-col-4 u-col-sm-8"><div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Awards &amp; Honors</h3></div></div>
+      </div>
+      <div class="spacer--s"></div>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Year</span></div>
+          <div class="col u-col-3 u-col-sm-5"><span>Award</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Organizer</span></div>
+          <div class="col u-col-1 u-col-sm-1"></div>
+        </div>
+        <details class="tbl__item reveal">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">한국심리학회 학부생 포스터 부문 우수상</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">제77차 한국심리학회 연차학술대회 · 수원컨벤션센터</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>제77차 한국심리학회 연차학술대회 'AI시대, 다시 생각하는 Human Mind'에서 연구 책임자(제1저자)로서 연구를 주도하였습니다.</p>
+              <p class="muted">교신저자/지도교수 · 조수현 교수님</p>
+              <div class="gallery">
+                <a href="award/award-1.jpg" class="gallery__item" data-lightbox><img src="award/award-1.jpg" alt="수상 단체사진 (상장)" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="award/award-2.jpg" class="gallery__item" data-lightbox><img src="award/award-2.jpg" alt="포스터 발표 장면" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="award/award-3.jpg" class="gallery__item" data-lightbox><img src="award/award-3.jpg" alt="우수상 상장과 꽃다발" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="tbl__item reveal" style="--i:1">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2022">2022</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">제1차 연차사색대회 최우수팀</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교 심리학과 학술 소모임 '사색'</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>'디지털 시대의 심리학(Psychology in the Digital Age)' 대회에서 <strong>'디지털 시대, 스마트기기는 우리에게 어떤 인지적 영향을 미치는가?'</strong>를 주제로 발표하여 최우수팀으로 선정되었습니다.</p>
+              <p class="muted">지도교수 · 김재휘 교수님</p>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & ACTIVITIES ============ -->
+    <section id="experience" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Experience</h1><div class="spacer--l"></div></div>
+      <div class="container">
+      <div class="section-top row">
+        <div class="col u-col-4 u-col-sm-8"><div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Experience &amp; Activities</h3></div></div>
+      </div>
+      <div class="spacer--s"></div>
+
+      <p class="u-text-caps sub-label"><span class="square"></span>학술 활동</p>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Period</span></div>
+          <div class="col u-col-3 u-col-sm-5"><span>Activity</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Where</span></div>
+          <div class="col u-col-1 u-col-sm-1"></div>
+        </div>
+
+        <details class="tbl__item reveal">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>2026.07 – 2026.12</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">학술 소모임 '사색' 학회장</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교 심리학과</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>2026년 2학기부터 한학기 동안 중앙대학교 심리학과 학회 '사색'의 장을 맡고있습니다. 계획서 역추적, 사색 콜로키움 등 연구의 길을 희망하는 학부생들과 함께 여러가지 프로젝트를 진행하며 당해 11월에 있을 제5차 사색 연차학술대회, open lab seminar 등을 준비하고 있습니다.</p>
+              <div class="actions"><a class="btn" href="https://www.instagram.com/caupsy1987/" target="_blank" rel="noopener">Instagram</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="tbl__item reveal" style="--i:1">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>2023 겨울 – 2024.02</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">BCSC 5기 수료</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">Brain and Cognitive Science Community</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>뇌와 인지에 관심 있는 학부생들이 모인 학회 BCSC(Brain and Cognitive Science Community) 5기에서 '뇌인지 C조'로 활동하였고, 논문 리뷰를 작성하고 조원들과 함께 토론(discussion)을 진행하였습니다.</p>
+              <p class="muted">리뷰 논문 · 이혜원, 김선경, 이고은, 정유진, &amp; 박지윤. (2012). 연령에 따른 인지 변화 양상. <em>한국심리학회지: 인지 및 생물</em>, 24(2), 127–148.</p>
+              <div class="actions"><a class="btn" href="https://bcscommunity123.wixstudio.com/bcsc" target="_blank" rel="noopener">Website</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="tbl__item reveal" style="--i:2">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>2023-2</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">'인지신경과학 연구 맛보기' 프로그램 기획·운영</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">학술 소모임 '사색'</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>학술 소모임 '사색'이 주관한 프로그램을 활동책임자로서 직접 기획하고 운영하였습니다. 매주 커리큘럼과 발표 타임테이블을 구성하고, 조원들의 연구 주제 발표를 이끌었습니다.</p>
+              <div class="gallery">
+                <a href="inyeonmat/inyeonmat-1.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-1.png" alt="인지신경과학 연구 맛보기 운영 기록 1 — 커리큘럼" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-2.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-2.png" alt="인지신경과학 연구 맛보기 운영 기록 2" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-3.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-3.png" alt="인지신경과학 연구 맛보기 운영 기록 3" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-4.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-4.png" alt="인지신경과학 연구 맛보기 운영 기록 4" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-5.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-5.png" alt="인지신경과학 연구 맛보기 운영 기록 5" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-6.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-6.png" alt="인지신경과학 연구 맛보기 운영 기록 6" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-7.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-7.png" alt="인지신경과학 연구 맛보기 운영 기록 7 — 발표 타임테이블" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="inyeonmat/inyeonmat-8.png" class="gallery__item" data-lightbox><img src="inyeonmat/inyeonmat-8.png" alt="인지신경과학 연구 맛보기 운영 기록 8 — 발표 타임테이블" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="tbl__item reveal" style="--i:3">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>2023-1</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">'학부생 포스터팀' 팀장 · 학부 연구 수행</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">조수현 교수님 연구실 (Cognitive Psychology and Neuroscience Laboratory)</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>약 6개월간 <strong>Cognitive Psychology and Neuroscience Laboratory</strong>의 랩미팅에 매주 참석하여 대학원생·지도교수님께 연구 피드백을 받았고, 팀 회의를 주 2회 진행하며 연구를 이끌었습니다. Eye-tracker를 활용한 행동 실험 프로그램을 직접 기획하고 약 2개월간 실험을 수행하였고, 그 결과를 포스터로 게재하여 우수상을 수상하였습니다.</p>
+              <details class="research-materials">
+                <summary>실험 자료 자세히 보기</summary>
+                <p style="margin-top:.8rem">
+                  시각장(좌·우)에 따라 180° 회전한 <strong>얼굴 자극</strong>과 <strong>단어 자극</strong>의 처리 우세가 어떻게
+                  달라지는지를 반응시간(RT) 기반 행동 실험으로 측정하였습니다. 참가자는 손잡이 설문(Van Strien, 2016)으로
+                  <strong>오른손잡이</strong>를 선별하고, eye-tracker로 응시를 통제하였습니다.
+                </p>
+                <p class="mat-label">얼굴 자극 예시 (Face stimuli)</p>
+                <div class="gallery">
+                  <a href="poster-research/face-1.png" class="gallery__item" data-lightbox><img src="poster-research/face-1.png" alt="얼굴 자극 샘플 1" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                  <a href="poster-research/face-2.png" class="gallery__item" data-lightbox><img src="poster-research/face-2.png" alt="얼굴 자극 샘플 2" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                  <a href="poster-research/face-3.png" class="gallery__item" data-lightbox><img src="poster-research/face-3.png" alt="얼굴 자극 샘플 3" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                  <a href="poster-research/face-4.png" class="gallery__item" data-lightbox><img src="poster-research/face-4.png" alt="얼굴 자극 샘플 4" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                </div>
+                <p class="muted">얼굴 자극 출처 · Lundqvist, D., Flykt, A., &amp; Öhman, A. (1998). <em>The Karolinska Directed Emotional Faces (KDEF)</em> [CD-ROM]. Stockholm: Karolinska Institutet, Department of Clinical Neuroscience, Psychology Section. <span style="white-space:nowrap">(공개 자료 · 샘플만 게시)</span></p>
+                <p class="mat-label">단어 자극 예시 (Word stimuli · 동물/과일 범주)</p>
+                <div class="word-strip">
+                  <span class="word-chip"><img src="poster-research/word-1.png" alt="단어 자극 1" loading="lazy" /></span>
+                  <span class="word-chip"><img src="poster-research/word-2.png" alt="단어 자극 2" loading="lazy" /></span>
+                  <span class="word-chip"><img src="poster-research/word-3.png" alt="단어 자극 3" loading="lazy" /></span>
+                  <span class="word-chip"><img src="poster-research/word-4.png" alt="단어 자극 4" loading="lazy" /></span>
+                </div>
+                <p class="mat-label">실험 현장</p>
+                <div class="gallery">
+                  <a href="poster-research/setup-1.jpg" class="gallery__item" data-lightbox><img src="poster-research/setup-1.jpg" alt="실험 세팅 (자극 제시·응답)" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                  <a href="poster-research/setup-2.jpg" class="gallery__item" data-lightbox><img src="poster-research/setup-2.jpg" alt="실험 준비 중인 연구자" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                </div>
+                <p class="mat-label">예시 데이터</p>
+                <p class="muted">📄 <a href="poster-research/example-data.csv" download style="text-decoration:underline">raw data 예시 (CSV)</a> — 익명화된 시행 단위 행동 데이터 (좌/우 시각장 · 자극 범주 · 반응 · 반응시간 · Focus = 아이트래커 응시 유지 여부). 필터 전 원자료 1명분(272시행)이며, 분석에는 응시가 유지된 시행만 사용하였습니다.</p>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="tbl__item reveal" style="--i:4">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">학술 소모임 '사색' 차장</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교 심리학과</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>중앙대학교 심리학과 학술 소모임 '사색'의 차장으로 학술 모임 운영을 이끌었습니다.</p>
+              <div class="actions"><a class="btn" href="https://www.instagram.com/caupsy1987/" target="_blank" rel="noopener">Instagram</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="tbl__item reveal" style="--i:5">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time>2022 겨울 – 2023.02</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">한국대학생심리학회 3.5기 수료 · 인지신경과학</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">한국대학생심리학회</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8">
+              <p>전국 대학생이 모인 한국대학생심리학회 3.5기 '인지신경과학' 과정을 수료하였습니다. 『인지신경과학』(Banich &amp; Compton) 교재를 바탕으로, 매주 각자 진도에서 <strong>3문제 이상을 직접 출제</strong>하고 서로의 문제를 풀이·해설하는 <strong>동료 학습(peer-learning)</strong> 방식으로 진행했으며, 자유 발제와 총정리 시험으로 마무리하였습니다.</p>
+              <div class="gallery">
+                <a href="kssp-1.png" class="gallery__item" data-lightbox><img src="kssp-1.png" alt="한국대학생심리학회 인지신경과학 스터디 개요·방식" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+                <a href="kssp-2.png" class="gallery__item" data-lightbox><img src="kssp-2.png" alt="한국대학생심리학회 인지신경과학 스터디 커리큘럼" loading="lazy" onerror="this.closest('.gallery__item').remove()" /></a>
+              </div>
+              <div class="actions"><a class="btn" href="https://kpauniv.co.kr/" target="_blank" rel="noopener">Website</a></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <p class="u-text-caps sub-label"><span class="square"></span>참관 및 수료 이력</p>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Year</span></div>
+          <div class="col u-col-3 u-col-sm-6"><span>Event</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Venue</span></div>
+          <div class="col u-col-1"></div>
+        </div>
+        <div class="tbl__item reveal"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2026">2026</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell">2026 세계 뇌주간</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">서울대학교</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+        <div class="tbl__item reveal" style="--i:1"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2024">2024</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell">2024 한국인지과학회 학술대회 "Mind, Brain and Data"</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">한국과학기술회관</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+        <div class="tbl__item reveal" style="--i:2"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell">제77차 한국심리학회 연차학술대회 "AI 시대, 다시 생각하는 Human Mind"</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">수원컨벤션센터</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+        <div class="tbl__item reveal" style="--i:3"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell">2023 한국인지과학회 학술대회 "인공두뇌의 인간두뇌에 대한 도전: 데이터의 힘, 사람의 힘"</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">한국과학기술회관</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+        <div class="tbl__item reveal" style="--i:4"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell">2023 한국 인지 및 생물 심리학회 연차학술대회 "Cognition in the wild: Toward an understanding of naturalistic cognition"</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">연세대학교</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+      </div>
+
+      <p class="u-text-caps sub-label"><span class="square"></span>기타 활동</p>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Year</span></div>
+          <div class="col u-col-3 u-col-sm-5"><span>Role</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Where</span></div>
+          <div class="col u-col-1 u-col-sm-1"></div>
+        </div>
+        <details class="tbl__item reveal">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2024">2024</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">새내기 새로배움터 심리학과 기획단장</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">사회과학대학</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8"><p>약 1억원 규모의 새내기 새로배움터 행사의 심리학과 기획단장으로서 학과 프로그램 총기획·예산 관리·운영을 책임지고 18명의 기획단원들을 이끌었습니다.</p></div>
+          </div>
+        </details>
+        <details class="tbl__item reveal" style="--i:1">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2023">2023</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">밴드 소모임 'SPSS' 차장</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교 심리학과</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8"><p>80여명 규모의 과내 소모임 차장으로서 회계·재무와 기획 보조를 담당했고, 세션 멤버(키보드)로 밴드 활동에 직접 참여하였습니다.</p></div>
+          </div>
+        </details>
+        <details class="tbl__item reveal" style="--i:2">
+          <summary class="tbl__row">
+            <span class="row">
+              <span class="col u-col-1 u-col-sm-2"><time datetime="2022">2022</time></span>
+              <span class="col u-col-3 u-col-sm-5"><span class="cell cell--title">학생회 'BE:HIND' 홍보부 부장</span></span>
+              <span class="col u-col-3 u-hide-sm"><span class="cell cell--where">중앙대학교 심리학과 학생회</span></span>
+              <span class="col u-col-1 u-col-sm-1 u-align-end"><span class="btn-text" data-open="details" data-close="close"></span></span>
+            </span>
+          </summary>
+          <div class="tbl__detail row">
+            <div class="col u-col-1"></div>
+            <div class="col u-col-6 u-col-sm-8"><p>학과 소식과 행사를 알리는 홍보부 부장으로 활동하였습니다.</p></div>
+          </div>
+        </details>
+      </div>
+
+      <p class="u-text-caps sub-label"><span class="square"></span>군 경력 사항</p>
+      <div class="tbl" role="table">
+        <div class="tbl__head row" role="row">
+          <div class="col u-col-1 u-col-sm-2"><span>Period</span></div>
+          <div class="col u-col-3 u-col-sm-6"><span>Service</span></div>
+          <div class="col u-col-3 u-hide-sm"><span>Branch</span></div>
+          <div class="col u-col-1"></div>
+        </div>
+        <div class="tbl__item reveal"><div class="tbl__row" style="cursor:default"><div class="row">
+          <div class="col u-col-1 u-col-sm-2"><time>2024.07 – 2026.03</time></div>
+          <div class="col u-col-3 u-col-sm-6"><span class="cell cell--title">병장 만기전역</span><span class="muted" style="display:block">21개월 복무</span></div>
+          <div class="col u-col-3 u-hide-sm"><span class="cell cell--where">대한민국 공군</span></div>
+          <div class="col u-col-1"></div>
+        </div></div></div>
+      </div>
+      <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY (참조: 01 / 08 · Prev Next) ============ -->
+    <section id="gallery" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Gallery</h1><div class="spacer--l"></div></div>
+      <div class="container">
+      <div class="section-top row">
+        <div class="col u-col-4 u-col-sm-8"><div class="section-top__start"><h3 class="u-text-caps"><span class="square"></span>Gallery</h3></div></div>
+      </div>
+      <div class="spacer--s"></div>
+      <div class="carousel" id="carousel">
+        <div class="carousel__track" id="carousel-track">
+          <a href="award/award-2.jpg" class="carousel__slide" data-lightbox data-cap="제77차 한국심리학회 연차학술대회 · 포스터 발표"><img src="award/award-2.jpg" alt="포스터 발표 장면" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="award/award-1.jpg" class="carousel__slide" data-lightbox data-cap="학부생 포스터 부문 우수상 · 단체사진"><img src="award/award-1.jpg" alt="수상 단체사진 (상장)" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="award/award-3.jpg" class="carousel__slide" data-lightbox data-cap="우수상 상장"><img src="award/award-3.jpg" alt="우수상 상장과 꽃다발" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="poster-research/setup-1.jpg" class="carousel__slide" data-lightbox data-cap="실험 세팅 · 자극 제시와 응답"><img src="poster-research/setup-1.jpg" alt="실험 세팅" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="poster-research/setup-2.jpg" class="carousel__slide" data-lightbox data-cap="실험 준비"><img src="poster-research/setup-2.jpg" alt="실험 준비 중인 연구자" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="inyeonmat/inyeonmat-1.png" class="carousel__slide" data-lightbox data-cap="'인지신경과학 연구 맛보기' 커리큘럼"><img src="inyeonmat/inyeonmat-1.png" alt="인지신경과학 연구 맛보기 운영 기록 1" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="inyeonmat/inyeonmat-7.png" class="carousel__slide" data-lightbox data-cap="'인지신경과학 연구 맛보기' 발표 타임테이블"><img src="inyeonmat/inyeonmat-7.png" alt="인지신경과학 연구 맛보기 운영 기록 7" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="kssp-1.png" class="carousel__slide" data-lightbox data-cap="한국대학생심리학회 인지신경과학 스터디"><img src="kssp-1.png" alt="한국대학생심리학회 인지신경과학 스터디 개요" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+          <a href="kssp-2.png" class="carousel__slide" data-lightbox data-cap="한국대학생심리학회 인지신경과학 스터디 커리큘럼"><img src="kssp-2.png" alt="한국대학생심리학회 인지신경과학 스터디 커리큘럼" loading="lazy" onerror="this.closest('.carousel__slide').remove()" /></a>
+        </div>
+        <div class="carousel__bar">
+          <span class="carousel__count" id="carousel-count">01 / 09</span>
+          <div class="carousel__nav">
+            <button type="button" id="carousel-prev" aria-label="이전">Prev</button>
+            <button type="button" id="carousel-next" aria-label="다음">Next</button>
+          </div>
+        </div>
+        <p class="muted carousel__cap" id="carousel-cap"></p>
+      </div>
+      <div class="spacer--l"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT (참조: newsletter 가운데 블록) ============ -->
+    <section id="contact" class="panel" data-section-theme="light">
+      <div class="panel-hero container"><h1 class="reveal">Contact</h1></div>
+      <div class="cta container">
+        <p class="u-text-caps" style="margin-bottom:1rem"><span class="square"></span>Contact</p>
+        <p>연구·협업·질문은 언제든 편하게 연락 주시면 됩니다.</p>
+        <div class="cta__actions">
+          <a class="btn" href="mailto:zhi132@cau.ac.kr">zhi132@cau.ac.kr</a>
+          <a class="btn" href="mailto:myjai132@gmail.com">myjai132@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 푸터 (참조: Links / Support / Follow) ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col u-col-2 u-col-sm-8">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#experience">Experience</a></li>
+          </ul>
+        </div>
+        <div class="col u-col-2 u-col-sm-8">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:zhi132@cau.ac.kr">zhi132@cau.ac.kr</a></li>
+            <li><a href="mailto:myjai132@gmail.com">myjai132@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="col u-col-2 u-col-sm-8">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://github.com/jaeyeobchoi" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.instagram.com/caupsy1987/" target="_blank" rel="noopener">사색 Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col u-col-2 u-col-sm-8">
+          <h4>Documents</h4>
+          <ul>
+            <li><a href="Choi-2023-Visual-Field-Advantages.pdf" target="_blank" rel="noopener">Poster (PDF)</a></li>
+            <li><a href="Choi-2023-Visual-Field-Advantages-ab.pdf" target="_blank" rel="noopener">Abstract (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__copy">
+        <span>© <span id="year"></span> 최재엽 (Jaeyeob Choi). All rights reserved.</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 이미지 확대 라이트박스 -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox__hint">닫기 ✕</span>
+    <img id="lightbox-img" src="" alt="확대 이미지" />
+  </div>
+
+  <script>
+    // 푸터 연도
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 라이트박스
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        lbImg.src = el.getAttribute("href");
+        lb.classList.add("open");
+      });
+    });
+    lb.addEventListener("click", () => { lb.classList.remove("open"); lbImg.src = ""; });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { lb.classList.remove("open"); lbImg.src = ""; } });
+
+    // 등장 애니메이션 (참조: data-reveal-group / data-stagger)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // 갤러리 캐러셀: 카운터 01 / NN, Prev / Next, 캡션
+    const track = document.getElementById("carousel-track");
+    const count = document.getElementById("carousel-count");
+    const cap = document.getElementById("carousel-cap");
+    const slides = () => Array.from(track.querySelectorAll(".carousel__slide"));
+    const pad = (n) => String(n).padStart(2, "0");
+    function current() {
+      const s = slides(); if (!s.length) return 0;
+      const w = s[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+      return Math.min(s.length - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+    }
+    function update() {
+      const s = slides(); if (!s.length) { count.textContent = "00 / 00"; cap.textContent = ""; return; }
+      const i = current();
+      count.textContent = `${pad(i + 1)} / ${pad(s.length)}`;
+      cap.textContent = s[i].dataset.cap || "";
+    }
+    function go(dir) {
+      const s = slides(); if (!s.length) return;
+      const i = Math.min(s.length - 1, Math.max(0, current() + dir));
+      track.scrollTo({ left: s[i].offsetLeft - track.offsetLeft, behavior: "smooth" });
+    }
+    document.getElementById("carousel-prev").addEventListener("click", () => go(-1));
+    document.getElementById("carousel-next").addEventListener("click", () => go(1));
+    let raf = null;
+    track.addEventListener("scroll", () => { if (raf) return; raf = requestAnimationFrame(() => { update(); raf = null; }); });
+    window.addEventListener("load", update);
+    window.addEventListener("resize", update);
+    update();
+
+    // 패널 라우터: 메뉴 클릭 → 해당 섹션만 슬라이드로 표시, 해시로 주소 동기화
+    const panels = Array.from(document.querySelectorAll(".panel"));
+    const ids = panels.map((p) => p.id);
+    const navEl = document.querySelector(".nav");
+    const navToggle = document.getElementById("nav-toggle");
+    let cur = null;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function closeMenu() { navEl.classList.remove("is-open"); navToggle.setAttribute("aria-expanded", "false"); navToggle.textContent = "Menu"; }
+    function show(id, push = true) {
+      const next = ids.includes(id) ? document.getElementById(id) : panels[0];
+      if (next === cur) { closeMenu(); return; }
+      const dir = cur && ids.indexOf(next.id) < ids.indexOf(cur.id) ? -1 : 1;
+      if (cur) {
+        const leaving = cur;
+        leaving.classList.remove("is-entering");
+        if (reduce) { leaving.classList.remove("is-active"); }
+        else {
+          leaving.style.setProperty("--dir", (dir * 64) + "px");
+          leaving.classList.add("is-leaving");
+          leaving.addEventListener("animationend", () => leaving.classList.remove("is-leaving", "is-active"), { once: true });
+        }
+      }
+      next.style.setProperty("--dir", (dir * 64) + "px");
+      next.classList.add("is-active");
+      if (!reduce) { next.classList.add("is-entering"); next.addEventListener("animationend", () => next.classList.remove("is-entering"), { once: true }); }
+      cur = next;
+      window.scrollTo({ top: 0, behavior: "instant" });
+      document.querySelectorAll(".nav__links a").forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + next.id));
+      if (push && location.hash !== "#" + next.id) {
+        try { history.pushState(null, "", "#" + next.id); }
+        catch (_) { location.hash = next.id; }   // file:// 등 pushState가 막힌 환경
+      }
+      closeMenu();
+      if (next.id === "gallery") requestAnimationFrame(update);
+    }
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      const id = a.getAttribute("href").slice(1);
+      if (ids.includes(id)) a.addEventListener("click", (e) => { e.preventDefault(); show(id); });
+      else if (id === "top") a.addEventListener("click", (e) => { e.preventDefault(); show(ids[0]); });
+    });
+    window.addEventListener("popstate", () => show(location.hash.slice(1) || ids[0], false));
+    navToggle.addEventListener("click", () => {
+      const open = navEl.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.textContent = open ? "Close" : "Menu";
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+    show(location.hash.slice(1) || ids[0], false);
+  </script>
+</body>
+</html>
